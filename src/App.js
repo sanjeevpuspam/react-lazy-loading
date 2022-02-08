@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import { Container, Grid, Box } from '@mui/material';
 
-function App() {
+import ProgressBar from './Components/ProgressBar';
+const ApiData = lazy(()=> import('./Components/ApiData'))
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container >
+          <Box sx={{ bgcolor: '#cfe8fc' }}>
+            <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Suspense fallback={<ProgressBar/>}>
+                <ApiData />
+            </Suspense>
+          </Grid>
+        </Box>
+      </Container>
     </div>
   );
 }
