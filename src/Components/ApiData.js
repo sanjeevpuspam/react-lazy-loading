@@ -27,7 +27,7 @@ const ApiData = () => {
   return <>
       {
         posts.length>0 && posts.map(item => {
-            return( <Accordion item xs={4} key={ item.id } expanded={expanded === item.id } onChange={ handleChange(item.id) }>
+            return( <Accordion style={ {width:`100%` } } item xs={4} key={ item.id } expanded={expanded === item.id } onChange={ handleChange(item.id) }>
                   <AccordionSummary  expandIcon={<ExpandMore />}><Typography>{ item.title }</Typography></AccordionSummary>
                   <AccordionDetails><Typography>{ item.body }</Typography></AccordionDetails>
                 </Accordion>

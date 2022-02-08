@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <Container >
-          <Box sx={{ bgcolor: '#cfe8fc' }}>
+          <Box>
             <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             <Suspense fallback={<ProgressBar/>}>
                 <ApiData />
